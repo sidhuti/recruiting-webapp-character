@@ -16,7 +16,6 @@ const StyledModal = Modal.styled`
 export const Class = () => {
   const { state } = useContext(AppContext);
 
-  console.log(state);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +32,6 @@ export const Class = () => {
     setTitle(title);
   };
 
-  console.log(modalData);
 
   return (
     <Wrapper>

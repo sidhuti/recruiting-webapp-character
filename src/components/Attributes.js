@@ -21,7 +21,6 @@ export const Attributes = () => {
     });
   };
 
-  console.log(state.attributes);
 
   return (
     <Wrapper>
