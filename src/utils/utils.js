@@ -13,8 +13,6 @@ export const isBelongigToClass = (attributeArray, chosenClass) => {
     Object.assign(attributes, x);
   });
 
-  console.log(attributes);
-  console.log(chosenClass);
 
   return _.isEqualWith(attributes, chosenClass, (val1, val2) => {
     if (_.isObject(val1) && _.isObject(val2)) {
