@@ -1,24 +1,36 @@
-import { useState } from 'react';
-import './App.css';
-import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from './consts.js';
+import React, { useReducer } from "react";
+import { ModalProvider } from "styled-react-modal";
+import "./App.css";
+import reducer from "./reducer/reducer";
+import Attributes from "./components/Attributes";
+import Class from "./components/Class";
+import { ATTRIBUTE_LIST, CLASS_LIST } from "./consts.js";
 
+export const AppContext = React.createContext(null);
+
+const intialState = {
+  attributes: ATTRIBUTE_LIST.map((x) => ({ name: x, value: 0 })),
+  CLASS_LIST,
+};
 
 function App() {
-  const [num, setNum] = useState(0);
+  const [state, dispatch] = useReducer(reducer, intialState);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React Coding Exercise</h1>
-      </header>
-      <section className="App-section">
-        <div>
-          Value:
-          {num}
-          <button>+</button>
-          <button>-</button>
+    <ModalProvider>
+      <AppContext.Provider value={{ state, dispatch }}>
+        <div className="App">
+          <header className="App-header">
+            <h1>React Coding Exercise</h1>
+          </header>
+          <section className="App-section">
+            <Attributes />
+            <Class />
+          </section>
+          <section></section>
         </div>
-      </section>
-    </div>
+      </AppContext.Provider>
+    </ModalProvider>
   );
 }
 
