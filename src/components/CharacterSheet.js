@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST } from '../consts';
+import { ATTRIBUTE_LIST, CLASS_LIST, SKILL_LIST, CHARACTER_URL } from '../consts';
 import Attributes from './Attributes';
 import Classes from './Classes';
 import Skills from './Skills';
@@ -66,7 +66,7 @@ const CharacterSheet = () => {
   };
 
   const saveCharacter = async (character) => {
-    await fetch(`https://recruiting.verylongdomaintotestwith.ca/api/sidhuti/character`, {
+    await fetch(CHARACTER_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const CharacterSheet = () => {
   };
 
   const loadCharacter = async () => {
-    const response = await fetch(`https://recruiting.verylongdomaintotestwith.ca/api/sidhuti/character`);
+    const response = await fetch(CHARACTER_URL);
     const data = await response.json();
     return data;
   };

@@ -7,7 +7,7 @@ const ClassContainer = styled.div`
 
 const ClassRow = styled.div`
   cursor: pointer;
-  color: ${props => (props.meetsRequirements ? 'green' : 'red')};
+  color: ${props => (props.$meetsRequirements ? 'green' : 'red')};
 `;
 
 const ClassDetails = styled.div`
@@ -26,7 +26,7 @@ const Classes = ({ attributes, classes, selectedClass, selectClass }) => {
         <ClassRow
           key={cls}
           onClick={() => selectClass(cls)}
-          meetsRequirements={checkRequirements(cls)}
+          $meetsRequirements={checkRequirements(cls)}
         >
           {cls}
         </ClassRow>

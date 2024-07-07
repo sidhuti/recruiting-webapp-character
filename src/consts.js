@@ -55,3 +55,5 @@ export const SKILL_LIST = [
     { name: 'Survival', attributeModifier: 'Wisdom' },
 
 ]
+
+export const CHARACTER_URL = 'https://recruiting.verylongdomaintotestwith.ca/api/sidhuti/character'
