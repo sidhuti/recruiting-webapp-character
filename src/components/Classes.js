@@ -15,6 +15,7 @@ const ClassDetails = styled.div`
 `;
 
 const Classes = ({ attributes, classes, selectedClass, selectClass }) => {
+  // Check if character meets the minimum requirements to be highlighted in green.
   const checkRequirements = (cls) => {
     return Object.entries(classes[cls]).every(([attr, min]) => attributes[attr] >= min);
   };

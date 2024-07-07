@@ -61,6 +61,7 @@ const Skills = ({ attributes }) => {
     }));
   };
 
+  // Business Logic : Total skill points available based on intelligence modifier
   const totalSkillPoints = 10 + 4 * calculateModifier(attributes.Intelligence);
   const spentSkillPoints = Object.values(skillPoints).reduce((acc, points) => acc + points, 0);
 

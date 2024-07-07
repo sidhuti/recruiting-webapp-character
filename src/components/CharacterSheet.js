@@ -41,6 +41,7 @@ const CharacterSheet = () => {
     setCharacters([...characters, { id: characters.length + 1, attributes: { ...initialAttributes }, exceedsLimit: false, selectedClass: null }]);
   };
 
+  // Function to update character attributes && make sure total does not exceed 70
   const updateAttribute = (id, attr, value) => {
     setCharacters(characters.map(char => {
       if (char.id === id) {

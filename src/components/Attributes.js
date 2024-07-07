@@ -44,6 +44,9 @@ const Warning = styled.p`
 `;
 
 const Attributes = ({ attributes, updateAttribute, exceedsLimit }) => {
+
+  // Business Logic : When Attribute value increases by two, modifier increases by one.
+  // Eg: Intelligence: 12 -> Intelligence Modifier: 1
   const calculateModifier = (value) => Math.floor((value - 10) / 2);
 
   return (
